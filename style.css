@@ -88,6 +88,25 @@
         list-style: none;
     }
 
+    .nav-link {
+  color: white; /* atau warna lain yang kamu mau */
+  text-decoration: none; /* hilangkan garis bawah */
+}
+
+.nav-link:visited {
+  color: black;
+}
+
+.nav-link:hover {
+  color: rgb(163, 159, 159); /* opsional efek hover */
+}
+
+
+    .nav-links a{
+        list-style: none;
+        color: white;
+    }
+
     .nav-links li {
         margin-left: 30px;
     }
@@ -226,6 +245,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 50px;
         align-items: center;
+    }
+
+    .about {
+        height: 100vh;
     }
 
     .about-image {
@@ -1336,6 +1359,11 @@ letter-spacing: 0%;
         background-color: var(--light);
         padding: 60px 0;
     }
+
+    .member h1{
+        text-align: center;
+        margin-bottom: 50px;
+    }
     
     .member-container {
         max-width: 1200px;
@@ -1845,6 +1873,4 @@ letter-spacing: 0%;
             transform: rotate(-135deg); /* Point up when open */
         }
         
-        p {
-            margin-bottom: 15px;
-        }
+        
