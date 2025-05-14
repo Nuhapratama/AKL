@@ -563,7 +563,7 @@ letter-spacing: 0%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 300px;
-    height: 313px;
+    height: 360px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -678,6 +678,11 @@ letter-spacing: 0%;
     flex-direction: column;
     justify-content: flex-end;
 }
+
+@media (max-width: 768px) {
+    
+}
+
 
 .hover-content {
     padding: 20px;
@@ -1710,3 +1715,111 @@ letter-spacing: 0%;
             max-width: 280px;
         }
     }
+
+        .header {
+            text-align: center;
+            padding: 25px 20px 15px;
+            color: rgb(0, 0, 0);
+                text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+        }
+        
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+        }
+        
+        .logoo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logoo img{
+
+            width: 75%;
+            height: auto;
+        }
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .description-container {
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+                        opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                        padding 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            padding: 0 5px;
+            color: #555;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .description.open {
+            max-height: 500px;
+            opacity: 1;
+            padding: 20px 5px;
+        }
+        
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 10px;
+        }
+        
+        .toggle-btn {
+            width: 36px;
+            height: 36px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-btn:focus {
+            outline: none;
+        }
+        
+        .arrow {
+            border: solid #464447;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 4px;
+            transition: transform 0.3s ease;
+            transform: rotate(45deg); /* Point down initially */
+        }
+        
+        .arrow.up {
+            transform: rotate(-135deg); /* Point up when open */
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }

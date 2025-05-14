@@ -189,6 +189,61 @@ document.querySelectorAll('.guru-box').forEach(box => {
     });
 });
 
+document.querySelectorAll('.guru-box').forEach(box => {
+    if (box.id === 'k3-box' || box.id === 'hover-example') return; // Skip the K3 box and example hover box
+    
+    const avatar = box.querySelector('.guru-avatar img');
+    const motto = box.querySelector('.guru-motto').innerText;
+    const name = box.querySelector('.guru-name').innerText;
+    const username = box.querySelector('.guru-username').innerText;
+    
+    // Store original HTML for reverting on mouseout
+    const originalHtml = box.innerHTML;
+    
+    // Fungsi untuk menerapkan efek hover
+    const applyHoverEffect = () => {
+        const avatarSrc = avatar ? avatar.getAttribute('src') : '/api/placeholder/400/320';
+        box.classList.add('guru-box-hover');
+        box.style.backgroundImage = `url('${avatarSrc}')`;
+        box.innerHTML = `
+            <div class="hover-content">
+                <h3 class="guru-name">${name}</h3>
+                <p class="guru-username">${username}</p>
+                <p class="guru-motto-hover">${motto}</p>
+            </div>
+        `;
+    };
+    
+    // Fungsi untuk mengembalikan tampilan normal
+    const removeHoverEffect = () => {
+        box.classList.remove('guru-box-hover');
+        box.style.backgroundImage = '';
+        box.innerHTML = originalHtml;
+    };
+    
+    // Deteksi apakah perangkat mobile (lebar layar kurang dari 768px)
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Pada perangkat mobile, langsung terapkan efek hover
+        applyHoverEffect();
+    } else {
+        // Pada desktop, gunakan event mouseenter/mouseleave
+        box.addEventListener('mouseenter', applyHoverEffect);
+        box.addEventListener('mouseleave', removeHoverEffect);
+    }
+    
+    // Tangani resize window - update efek berdasarkan ukuran layar baru
+    window.addEventListener('resize', () => {
+        const currentIsMobile = window.innerWidth <= 768;
+        if (currentIsMobile && !isMobile) {
+            applyHoverEffect();
+        } else if (!currentIsMobile && isMobile) {
+            removeHoverEffect();
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('imageModal');
   const expandedImage = document.getElementById('expandedImage');
@@ -427,3 +482,11 @@ document.querySelectorAll('.member-box').forEach(box => {
 });
 });
 
+ const toggleBtn = document.querySelector('.toggle-btn');
+        const description = document.querySelector('.description');
+        const arrow = document.querySelector('.arrow');
+        
+        toggleBtn.addEventListener('click', function() {
+            description.classList.toggle('open');
+            arrow.classList.toggle('up');
+        });
