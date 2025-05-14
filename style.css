@@ -579,7 +579,7 @@ letter-spacing: 0%;
 
 .guru-section {
     max-width: 1200px;
-    height: 100vh;
+    min-height: 100svh;
     margin: 0 auto;
     padding: 20px 0;
 }
