@@ -347,8 +347,13 @@ letter-spacing: 0%;
 .profesi-scroll-container {
     width: 100%;
     overflow-x: auto;
+    margin-left: 30px;
     padding: 30px 0;
     -webkit-overflow-scrolling: touch;
+}
+
+.profesi-scrolll {
+    display: inline-flex;
 }
 
 .profesi-scroll {

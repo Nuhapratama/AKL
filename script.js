@@ -126,11 +126,9 @@ if (k3Box) {
     // Store original HTML for reverting on mouseout
     const k3OriginalHtml = k3Box.innerHTML;
     
-    k3Box.addEventListener('mouseenter', () => {
-        // Get avatar image source
+    // Fungsi untuk menerapkan efek hover pada k3-box
+    const applyK3HoverEffect = () => {
         const avatarSrc = k3Avatar.getAttribute('src');
-        
-        // Transform box to hover state (split view)
         k3Box.classList.add('k3-box-hover');
         k3Box.innerHTML = `
             <div class="k3-image" style="background-image: url('${avatarSrc}');"></div>
@@ -142,15 +140,26 @@ if (k3Box) {
                 </div>
             </div>
         `;
-    });
+    };
     
-    k3Box.addEventListener('mouseleave', () => {
-        // Revert box to original state
+    // Fungsi untuk mengembalikan tampilan normal
+    const removeK3HoverEffect = () => {
         k3Box.classList.remove('k3-box-hover');
         k3Box.innerHTML = k3OriginalHtml;
-    });
+    };
+    
+    // Deteksi apakah perangkat mobile
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    
+    if (isMobile) {
+        // Pada perangkat mobile, langsung terapkan efek hover
+        applyK3HoverEffect();
+    } else {
+        // Pada desktop, gunakan event mouseenter/mouseleave
+        k3Box.addEventListener('mouseenter', applyK3HoverEffect);
+        k3Box.addEventListener('mouseleave', removeK3HoverEffect);
+    }
 }
-
 // Add hover effect to regular boxes
 document.querySelectorAll('.guru-box').forEach(box => {
     if (box.id === 'k3-box' || box.id === 'hover-example') return; // Skip the K3 box and example hover box
