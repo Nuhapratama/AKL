@@ -115,7 +115,6 @@ document.querySelectorAll('.profesi-box').forEach(box => {
         }
     });
 });
-
 // Khusus untuk k3-box (penanganan spesial)
 const k3Box = document.getElementById('k3-box');
 if (k3Box) {
@@ -127,12 +126,26 @@ if (k3Box) {
     // Store original HTML for reverting on mouseout
     const k3OriginalHtml = k3Box.innerHTML;
     
-    // Fungsi untuk menerapkan efek hover pada k3-box dengan format guru-box biasa
-    const applyK3HoverEffect = () => {
+    // Fungsi untuk menerapkan efek hover pada k3-box untuk desktop
+    const applyK3HoverEffectDesktop = () => {
         const avatarSrc = k3Avatar.getAttribute('src');
-        k3Box.classList.remove('k3-box'); // Hapus class k3-box
-        k3Box.classList.add('guru-box'); // Tambahkan class guru-box
-        k3Box.classList.add('guru-box-hover');
+        k3Box.classList.add('k3-box-hover');
+        k3Box.innerHTML = `
+            <div class="k3-image" style="background-image: url('${avatarSrc}');"></div>
+            <div class="k3-content">
+                <div class="k3-motto">${k3Motto}</div>
+                <div class="k3-info">
+                    <h3 class="k3-name">${k3Name}</h3>
+                    <p class="k3-username">${k3Username}</p>
+                </div>
+            </div>
+        `;
+    };
+    
+    // Fungsi untuk menerapkan efek hover pada k3-box untuk mobile (seperti guru-box biasa)
+    const applyK3HoverEffectMobile = () => {
+        const avatarSrc = k3Avatar.getAttribute('src');
+        k3Box.classList.add('guru-box-hover'); // Menggunakan class guru-box-hover, bukan k3-box-hover
         k3Box.style.backgroundImage = `url('${avatarSrc}')`;
         k3Box.innerHTML = `
             <div class="hover-content">
@@ -145,9 +158,8 @@ if (k3Box) {
     
     // Fungsi untuk mengembalikan tampilan normal
     const removeK3HoverEffect = () => {
-        k3Box.classList.remove('guru-box');
+        k3Box.classList.remove('k3-box-hover');
         k3Box.classList.remove('guru-box-hover');
-        k3Box.classList.add('k3-box'); // Kembalikan class k3-box
         k3Box.style.backgroundImage = '';
         k3Box.innerHTML = k3OriginalHtml;
     };
@@ -157,10 +169,10 @@ if (k3Box) {
     
     if (isMobile) {
         // Pada perangkat mobile, langsung terapkan efek hover seperti guru-box biasa
-        applyK3HoverEffect();
+        applyK3HoverEffectMobile();
     } else {
-        // Pada desktop, gunakan event mouseenter/mouseleave dengan format guru-box
-        k3Box.addEventListener('mouseenter', applyK3HoverEffect);
+        // Pada desktop, gunakan event mouseenter/mouseleave dengan efek khusus k3
+        k3Box.addEventListener('mouseenter', applyK3HoverEffectDesktop);
         k3Box.addEventListener('mouseleave', removeK3HoverEffect);
     }
     
@@ -170,7 +182,7 @@ if (k3Box) {
         
         if (currentIsMobile && !isMobile) {
             removeK3HoverEffect();
-            applyK3HoverEffect();
+            applyK3HoverEffectMobile();
         } else if (!currentIsMobile && isMobile) {
             removeK3HoverEffect();
         }
@@ -178,62 +190,6 @@ if (k3Box) {
 }
 
 // Add hover effect to regular guru boxes
-document.querySelectorAll('.guru-box').forEach(box => {
-    if (box.id === 'k3-box' || box.id === 'hover-example') return; // Skip the K3 box and example hover box
-    
-    const avatar = box.querySelector('.guru-avatar img');
-    const motto = box.querySelector('.guru-motto').innerText;
-    const name = box.querySelector('.guru-name').innerText;
-    const username = box.querySelector('.guru-username').innerText;
-    
-    // Store original HTML for reverting on mouseout
-    const originalHtml = box.innerHTML;
-    
-    // Fungsi untuk menerapkan efek hover
-    const applyHoverEffect = () => {
-        const avatarSrc = avatar ? avatar.getAttribute('src') : '/api/placeholder/400/320';
-        box.classList.add('guru-box-hover');
-        box.style.backgroundImage = `url('${avatarSrc}')`;
-        box.innerHTML = `
-            <div class="hover-content">
-                <h3 class="guru-name">${name}</h3>
-                <p class="guru-username">${username}</p>
-                <p class="guru-motto-hover">${motto}</p>
-            </div>
-        `;
-    };
-    
-    // Fungsi untuk mengembalikan tampilan normal
-    const removeHoverEffect = () => {
-        box.classList.remove('guru-box-hover');
-        box.style.backgroundImage = '';
-        box.innerHTML = originalHtml;
-    };
-    
-    // Deteksi apakah perangkat mobile (lebar layar kurang dari 768px)
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // Pada perangkat mobile, langsung terapkan efek hover
-        applyHoverEffect();
-    } else {
-        // Pada desktop, gunakan event mouseenter/mouseleave
-        box.addEventListener('mouseenter', applyHoverEffect);
-        box.addEventListener('mouseleave', removeHoverEffect);
-    }
-    
-    // Tangani resize window - update efek berdasarkan ukuran layar baru
-    window.addEventListener('resize', () => {
-        const currentIsMobile = window.innerWidth <= 768;
-        if (currentIsMobile && !isMobile) {
-            applyHoverEffect();
-        } else if (!currentIsMobile && isMobile) {
-            removeHoverEffect();
-        }
-    });
-});
-
-// Add hover effect to regular guru boxes (versi perbaikan yang digabungkan)
 document.querySelectorAll('.guru-box').forEach(box => {
     if (box.id === 'k3-box' || box.id === 'hover-example') return; // Skip the K3 box and example hover box
     

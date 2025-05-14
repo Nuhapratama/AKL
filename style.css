@@ -189,6 +189,7 @@
     /* Hero Section */
     .hero {
         height: 100vh;
+        max-height: 850px;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.426)), url('foto/cf01bf3b256373505a230d6509bba29a.jpeg');
         background-size: cover;
         background-position: center;
@@ -249,6 +250,7 @@
 
     .about {
         height: 100vh;
+        max-height: 850px;
     }
 
     .about-image {
@@ -579,7 +581,7 @@ letter-spacing: 0%;
 
 .guru-section {
     max-width: 1200px;
-    max-height: 800px;
+    max-height: 850px;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -588,7 +590,7 @@ letter-spacing: 0%;
     text-align: center;
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .guru-container {
