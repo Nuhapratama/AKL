@@ -250,6 +250,7 @@
 
     .about {
         height: 100vh;
+        min-height: min-content;
         max-height: 850px;
     }
 
