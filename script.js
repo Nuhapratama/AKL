@@ -123,8 +123,9 @@ if (k3Box) {
     const k3Name = k3Box.querySelector('.guru-name').innerText;
     const k3Username = k3Box.querySelector('.guru-username').innerText;
     
-    // Store original HTML for reverting on mouseout
+    // Store original HTML and class for reverting
     const k3OriginalHtml = k3Box.innerHTML;
+    const k3OriginalClassName = k3Box.className;
     
     // Fungsi untuk menerapkan efek hover pada k3-box untuk desktop
     const applyK3HoverEffectDesktop = () => {
@@ -142,11 +143,21 @@ if (k3Box) {
         `;
     };
     
-    // Fungsi untuk menerapkan efek hover pada k3-box untuk mobile (seperti guru-box biasa)
-    const applyK3HoverEffectMobile = () => {
-        const avatarSrc = k3Avatar.getAttribute('src');
-        k3Box.classList.add('guru-box-hover'); // Menggunakan class guru-box-hover, bukan k3-box-hover
+    // Fungsi untuk mengubah k3-box menjadi seperti guru-box biasa pada mobile
+    const convertToGuruBoxMobile = () => {
+        // Reset semua class dan styling terlebih dahulu
+        k3Box.className = '';
+        k3Box.style = '';
+        
+        // Tambahkan class guru-box dan styling yang sama persis dengan guru-box biasa
+        k3Box.classList.add('guru-box');
+        k3Box.classList.add('guru-box-hover'); // Langsung tambahkan efek hover
+        
+        // Set background image seperti guru-box biasa
+        const avatarSrc = k3Avatar ? k3Avatar.getAttribute('src') : '/api/placeholder/400/320';
         k3Box.style.backgroundImage = `url('${avatarSrc}')`;
+        
+        // Set HTML struktur yang sama persis dengan guru-box biasa
         k3Box.innerHTML = `
             <div class="hover-content">
                 <h3 class="guru-name">${k3Name}</h3>
@@ -156,11 +167,10 @@ if (k3Box) {
         `;
     };
     
-    // Fungsi untuk mengembalikan tampilan normal
-    const removeK3HoverEffect = () => {
-        k3Box.classList.remove('k3-box-hover');
-        k3Box.classList.remove('guru-box-hover');
-        k3Box.style.backgroundImage = '';
+    // Fungsi untuk mengembalikan tampilan normal k3-box
+    const restoreK3Box = () => {
+        k3Box.className = k3OriginalClassName;
+        k3Box.style = '';
         k3Box.innerHTML = k3OriginalHtml;
     };
     
@@ -168,23 +178,27 @@ if (k3Box) {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     
     if (isMobile) {
-        // Pada perangkat mobile, langsung terapkan efek hover seperti guru-box biasa
-        applyK3HoverEffectMobile();
+        // Pada perangkat mobile, ubah k3-box menjadi guru-box biasa
+        convertToGuruBoxMobile();
     } else {
         // Pada desktop, gunakan event mouseenter/mouseleave dengan efek khusus k3
         k3Box.addEventListener('mouseenter', applyK3HoverEffectDesktop);
-        k3Box.addEventListener('mouseleave', removeK3HoverEffect);
+        k3Box.addEventListener('mouseleave', () => {
+            k3Box.classList.remove('k3-box-hover');
+            k3Box.innerHTML = k3OriginalHtml;
+        });
     }
     
-    // Tangani resize window - update efek berdasarkan ukuran layar baru
+    // Tangani resize window - update tampilan berdasarkan ukuran layar baru
     window.addEventListener('resize', () => {
         const currentIsMobile = window.matchMedia("(max-width: 768px)").matches;
         
         if (currentIsMobile && !isMobile) {
-            removeK3HoverEffect();
-            applyK3HoverEffectMobile();
+            // Jika berubah dari desktop ke mobile
+            convertToGuruBoxMobile();
         } else if (!currentIsMobile && isMobile) {
-            removeK3HoverEffect();
+            // Jika berubah dari mobile ke desktop
+            restoreK3Box();
         }
     });
 }

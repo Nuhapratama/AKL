@@ -394,8 +394,44 @@ letter-spacing: 0%;
     padding: 0 20px;
 }
 
-.profesi-box {
-    background-image: url('foto/cf01bf3b256373505a230d6509bba29a.jpeg');
+.profesi-box1 {
+    background-image: url('foto/stafakutan.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;   
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box1 p {
+    display: none;
+
+}
+.profesi-box1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box1 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box2 {
+    background-image: url('foto/auditor.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -412,11 +448,11 @@ letter-spacing: 0%;
     color: white; /* Tambahkan jika teks di atas background */
 }
 
-.profesi-box p {
+.profesi-box2 p {
     display: none;
 
 }
-.profesi-box::before {
+.profesi-box2::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -425,12 +461,226 @@ letter-spacing: 0%;
     border-radius: 10px;
 }
 
-.profesi-box > * {
+.profesi-box2 > * {
     position: relative;
     z-index: 2; /* Supaya isi kotak tampil di atas overlay */
 }
 
+.profesi-box3 {
+    background-image: url('foto/taxconsultant.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
 
+.profesi-box3 p {
+    display: none;
+
+}
+.profesi-box3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box3 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box4 {
+    background-image: url('foto/kasir\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box4 p {
+    display: none;
+
+}
+.profesi-box4::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box4 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box5 {
+    background-image: url('foto/adminkeuangan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box5 p {
+    display: none;
+
+}
+.profesi-box5::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box5 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box6 {
+    background-image: url('foto/alanisiskredit.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box6 p {
+    display: none;
+
+}
+.profesi-box6::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box6 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box7 {
+    background-image: url('foto/perencanaankeuangan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box7 p {
+    display: none;
+
+}
+.profesi-box7::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box7 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
+
+.profesi-box8 {
+    background-image: url('foto/accountofficer.jpeg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 325px;
+    height: 385px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    color: white; /* Tambahkan jika teks di atas background */
+}
+
+.profesi-box8 p {
+    display: none;
+
+}
+.profesi-box8::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semakin tinggi angkanya, semakin gelap */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.profesi-box8 > * {
+    position: relative;
+    z-index: 2; /* Supaya isi kotak tampil di atas overlay */
+}
 .profesi-content {
     width: 100%;
     height: 100%;
@@ -466,25 +716,165 @@ letter-spacing: 0%;
 }
 
 @media (hover: none) and (pointer: coarse) {
-    .profesi-box {
+    .profesi-box1 {
       pointer-events: none;
     }
+     .profesi-box2 {
+      pointer-events: none;
+    }
+
+     .profesi-box3 {
+      pointer-events: none;
+    }
+
+     .profesi-box4 {
+      pointer-events: none;
+    }
+
+     .profesi-box5 {
+      pointer-events: none;
+    }
+
+     .profesi-box6 {
+      pointer-events: none;
+    }
+
+     .profesi-box7 {
+      pointer-events: none;
+    }
+
+     .profesi-box8 {
+      pointer-events: none;
+    }
+
   }
   
 
 /* Efek hover - memanjang ke samping */
 @media (hover: hover) and (pointer: fine) {
-    .profesi-box:hover {
+    .profesi-box1:hover {
         width: 600px;
         height: 385px;
         background-position: left;
     }
 
-    .profesi-box:hover p {
+    .profesi-box1:hover p {
         display: block;
     }
 
-    .profesi-box:hover .profesi-icon {
+    .profesi-box1:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box2:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box2:hover p {
+        display: block;
+    }
+
+    .profesi-box2:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box3:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box3:hover p {
+        display: block;
+    }
+
+    .profesi-box3:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box4:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box4:hover p {
+        display: block;
+    }
+
+    .profesi-box4:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box5:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box5 :hover p {
+        display: block;
+    }
+
+    .profesi-box5 :hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box6:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box6:hover p {
+        display: block;
+    }
+
+    .profesi-box6:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box7:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box7:hover p {
+        display: block;
+    }
+
+    .profesi-box7:hover .profesi-icon {
+        font-size: 4rem;
+        top: 30px;
+        right: 30px;
+    }
+
+        .profesi-box8:hover {
+        width: 600px;
+        height: 385px;
+        background-position: left;
+    }
+
+    .profesi-box8:hover p {
+        display: block;
+    }
+
+    .profesi-box8:hover .profesi-icon {
         font-size: 4rem;
         top: 30px;
         right: 30px;
@@ -525,11 +915,45 @@ letter-spacing: 0%;
 
 /* Responsive */
 @media (max-width: 768px) {
-    .profesi-box {
+    .profesi-box1 {
         width: 250px;
         height: 380px;
     }
 
+    .profesi-box2 {
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box3 {
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box4 {
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box5 {
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box6 {
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box7{
+        width: 250px;
+        height: 380px;
+    }
+
+    .profesi-box8 {
+        width: 250px;
+        height: 380px;
+    }
     .profesi p {
         display: block;
         text-align: left;
@@ -552,11 +976,45 @@ letter-spacing: 0%;
 }
 
 @media (max-width: 480px) {
-    .profesi-box {
-        width: 220px;
-        height: 350px;
+    .profesi-box1::before {
+       width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box2::before {
+         width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box3::before {
+        width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box4::before {
+         width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box5::before {
+ width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box6::before {
+         width: 100%;
+       height: 100%;
+    }
+
+        .profesi-box7::before {
+       width: 100%;
+       height: 100%;
     }
     
+        .profesi-box8::before {
+       width: 100%;
+       height: 100%;
+    }
      
     .photo-card {
         width: 45%;
