@@ -8,6 +8,10 @@
     --text: #2D3748; /* Abu-abu gelap untuk teks */
 }
 
+.gallery h2 {
+    margin-bottom: 6%;
+}
+
     * {
         margin: 0;     
         padding: 0;
@@ -25,7 +29,7 @@
         font-style: normal;
         line-height: 1.6;
         color: var(--text);
-        background-color: #fff;
+        background-color: #d2ebf8;
     }
 
     .container {
@@ -249,9 +253,10 @@
     }
 
     .about {
-        height: 100vh;
-        min-height: min-content;
+        height: 80%;
+        padding-bottom: 0;
         max-height: 850px;
+         background-color: #d2ebf8;
     }
 
     .about-image {
@@ -274,8 +279,9 @@
 
     /* Skills Section */
 .skills {
-    background: #83c6cd;
+ background-color: #d2ebf8;
     padding: 80px 0;
+    padding-bottom: 0;
 }
 
 .skills-container {
@@ -1040,6 +1046,7 @@ letter-spacing: 0%;
 
 .guru-section {
     max-width: 1200px;
+     background-color: #d2ebf8;
     max-height: 850px;
     margin: 0 auto;
     padding: 20px 0;
@@ -1572,6 +1579,9 @@ letter-spacing: 0%;
         transform: translateY(0);
       }
   
+      .program {
+        padding-bottom: 0;
+      }
       .photo-title {
         font-weight: bold;
         margin-bottom: 5px;
@@ -1818,7 +1828,7 @@ letter-spacing: 0%;
 
     /* member       */
     .member {
-        background-color: var(--light);
+         background-color: #d2ebf8;
         padding: 60px 0;
     }
 
@@ -2114,7 +2124,7 @@ letter-spacing: 0%;
 
        /* member       */
     .member {
-        background-color: var(--light);
+        background-color: #d2ebf8;
         padding: 60px 0;
     }
     
